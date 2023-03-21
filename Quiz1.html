@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pnc Movies</title>
+
+
+    <script type="text/javascript">
+
+        /* Example Query 
+        SELECT *
+FROM main_movie_table
+WHERE ReleaseYear = 1994
+  AND Genres LIKE '%Action%';
+
+  Where avgRating BETWEEN 7.0 and 8.0;
+*/  
+
+//DECADES 
+
+var dummy= 2000; 
+  var startYear;
+  var endYear; 
+  
+  startYear= document.getElementById("q1");
+
+  //Need to create an IF ELSE to figure out the end year.
+
+
+  //RATINGS, same idea
+  var startScore; //FLOAT
+  var endScore;    //FLOAT 
+
+  startScore= document.getElementByID("q2");
+  //IF ELSE to figure out the end YEAR. 
+
+  var genre; //COULD BE ARRAY.
+
+
+  
+
+
+
+        window.addEventListener("load",start,false);
+    </script>
+</head>
+<body>
+    <h1>PnC Movies</h1>
+    <form>
+        <!-- Question 1 -->
+        <p>Question 1: What decade do you want?</p>
+        <label>
+            <input type="radio" id="q1a" name="q1a" value="1990" >
+            1990s
+        </label><br>
+        <label>
+            <input type="radio" id="q1b" name="q1b" value="2000">
+            2000s
+        </label><br>
+        <label>
+            <input type="radio" id="q1c" name="q1c" value="2010">
+            2010s
+        </label><br>
+
+        <!-- Question 2 -->
+        <p>Question 2: What is the IMDB score you are looking for?</p>
+        <label>
+            <input type="radio" id="q2a" name="q2a" value="7.8">
+            Between 7 to 8
+        </label><br>
+        <label>
+            <input type="radio" id="q2b" name="q2b" value="8-9">
+           Between 8 to 9
+        </label><br>
+        <label>
+            <input type="radio" id="q2c" name="q2c" value="9-10">
+            Between 9 to 10
+        </label><br>
+
+        <!-- Question 3 checkbox for Genre-->
+        <p>Question 3: What genre do you want to watch?</p>
+        <label>
+            <input type="radio" id="q3a" name="q3a" value="action">
+            Action
+        </label><br>
+        <label>
+            <input type="radio" id="q3b" name="q3b" value="drama">
+            Drama
+        </label><br>
+        <label>
+            <input type="radio" id="q3c"name="q3c" value="romance">
+            Romance
+        </label><br>
+
+        <!-- Submit button -->
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
