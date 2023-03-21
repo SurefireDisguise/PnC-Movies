@@ -1,0 +1,43 @@
+﻿body {
+    background-color: rgba(198,194,219,1);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 
+        'Lucida Grande', 'Lucida Sans Unicode', 
+        'Geneva', 'Verdana', 'sans-serif';
+    margin: 0;
+}
+/*img {
+    float: left;
+    position: fixed;
+}*/
+/* Vertical navigation bar */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: rgb(155,121,178);
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+li a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: rgb(246,245,249);
+}
+    /* Hold unique color for active page on nav */    
+    li a.active {
+        background-color: rgb(250,238,193);
+        color: rgb(31,29,30);
+    }
+    /* Change the link color on hover */
+    li a:hover:not(.active) {
+        background-color: rgb(122,112,136);
+        color: rgb(246,245,249);
+    }
+div {
+    margin-left: 250px;
+    padding: 1px 16px;
+    height: 1000px;
+}
