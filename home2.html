@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Pn'C Movies</title>
+    <link href="style.css" rel="stylesheet" />
+    <!--<link href="../css/style.css" rel="stylesheet" />-->
+</head>
+<body>
+    <img src="/images/Pn'C Movies Logo4.jpg" alt="Logo" width="200" />
+    <ul>
+        <li><a href="login.html">Login</a></li>
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="pastRecommendations.html">Past Recommendations</a></li>
+        <li><a href="aboutUs.html">About Us</a></li>
+    </ul>
+
+    <div>
+        <h2>Quiz Part 2</h2>
+        <form action="/action_page.php" method="post">
+            <!--Question 7-->
+            <label for="second_genre">7. What is the secondary genre you want to see?</label><br />
+            <select id="second_genre" name="second_genre">
+                <option value="adventure">Adventure</option>
+                <option value="drama">Drama</option>
+                <option value="fantasy">Fantasy</option>
+                <option value="crime">Crime</option>
+                <option value="horror">Horror</option>
+                <option value="mystery">Mystery</option>
+                <option value="war">War</option>
+                <option value="romance">Romance</option>
+                <option value="biography">Biography</option>
+                <option value="action">Action</option>
+                <option value="sci-fi">Sci-Fi</option>
+                <option value="family">Family</option>
+                <option value="thriller">Thriller</option>
+                <option value="western">Western</option>
+                <option value="sport">Sport</option>
+                <option value="animation">Animation</option>
+                <option value="comedy">Comedy</option>
+                <option value="film-noir">Film-Noir</option>
+            </select><br />
+            <!--Question 8-->
+            <label for="fav_actor">8. Pick your favorite actor.</label><br />
+            <select id="fav_actor" name="fav_actor">
+                <option value="actor1">Actor 1</option>
+                <option value="actor2">Actor 2</option>
+                <option value="actor3">Actor 3</option>
+                <option value="actor4">Actor 4</option>
+                <option value="actor5">Actor 5</option>
+                <option value="nota">None of the Above</option>
+            </select><br />
+            <!--Question 9-->
+            <label for="fav_actress">9. Pick your favorite actress.</label><br />
+            <select id="fav_actress" name="fav_actress">
+                <option value="actress1">Actress 1</option>
+                <option value="actress2">Actress 2</option>
+                <option value="actress3">Actress 3</option>
+                <option value="actress4">Actress 4</option>
+                <option value="actress5">Actress 5</option>
+                <option value="nota">None of the Above</option>
+            </select><br />
+            <!--Question 10-->
+            <label for="fav_director">10. Pick your favorite director.</label><br />
+            <select id="fav_director" name="fav_director">
+                <option value="director1">Director 1</option>
+                <option value="director2">Director 2</option>
+                <option value="director3">Director 3</option>
+                <option value="director4">Director 4</option>
+                <option value="director5">Director 5</option>
+                <option value="nota">None of the Above</option>
+            </select><br />
+            
+
+            <!--Submit Button-->
+            <br>
+            <button onclick="window.location.href = 'recommendations.html';" type="button">Submit</button>
+        </form>
+
+    </div>
+
+</body>
+</html>

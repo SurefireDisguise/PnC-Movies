@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Pn'C Movies</title>
+    <link href="style.css" rel="stylesheet" />
+    <!--<link href="../css/style.css" rel="stylesheet" />-->
+</head>
+<body>
+    <img src="/images/Pn'C Movies Logo4.jpg" alt="Logo" width="200" />
+    <ul>
+        <li><a href="login.html">Login</a></li>
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="pastRecommendations.html">Past Recommendations</a></li>
+        <li><a href="aboutUs.html">About Us</a></li>
+    </ul>
+
+    <div>
+        <h2>Quiz Part 1</h2>
+        <form action="/action_page.php" method="post">
+            <!--Question 1-->
+            <label for="first_genre">1. What is the primary genre you want to see?</label><br />
+            <select id="first_genre" name="first_genre">
+                <option value="adventure">Adventure</option>
+                <option value="drama">Drama</option>
+                <option value="fantasy">Fantasy</option>
+                <option value="crime">Crime</option>
+                <option value="horror">Horror</option>
+                <option value="mystery">Mystery</option>
+                <option value="war">War</option>
+                <option value="romance">Romance</option>
+                <option value="biography">Biography</option>
+                <option value="action">Action</option>
+                <option value="sci-fi">Sci-Fi</option>
+                <option value="family">Family</option>
+                <option value="thriller">Thriller</option>
+                <option value="western">Western</option>
+                <option value="sport">Sport</option>
+                <option value="animation">Animation</option>
+                <option value="comedy">Comedy</option>
+                <option value="film-noir">Film-Noir</option>
+            </select><br />
+            <!--Question 2-->
+            <label for="alone_or_not">2. Are you watching alone or with family, friends, or a partner?</label><br />
+            <select id="alone_or_not" name="alone_or_not">
+                <option value="alone">Alone</option>
+                <option value="family">Family</option>
+                <option value="friends">Friends</option>
+                <option value="partner">Partner</option>
+            </select><br />
+            <!--Question 3-->
+            <label for="rating">3. What rating do you want the movie to have?</label><br />
+            <select id="rating" name="rating">
+                <option value="1.0-3.9">Bad</option>
+                <option value="4.0-5.9">Ok</option>
+                <option value="6.0-7.9">Good</option>
+                <option value="8.0-10.0">Great</option>
+            </select><br />
+            <!--Question 4-->
+            <label for="decade">4. What decade do you want the movie to be from?</label><br />
+            <select id="decade" name="decade">
+                <option value="1910">1910s</option>
+                <option value="1920">1920s</option>
+                <option value="1930">1930s</option>
+                <option value="1940">1940s</option>
+                <option value="1950">1950s</option>
+                <option value="1960">1960s</option>
+                <option value="1970">1970s</option>
+                <option value="1980">1980s</option>
+                <option value="1990">1990s</option>
+                <option value="2000">2000s</option>
+                <option value="2010">2010s</option>
+            </select><br />
+            <!--Question 5-->
+            <label for="runtime">5. How long should the movie's runtime be?</label><br />
+            <select id="runtime" name="runtime">
+                <option value="veryShort">Less than 60 mins</option>
+                <option value="short">60 – 90 mins</option>
+                <option value="average">90 – 120 mins</option>
+                <option value="averagePlus">120 – 150 mins</option>
+                <option value="long">150 – 180 mins</option>
+                <option value="veryLong">Over 210 mins</option>
+            </select><br />
+            <!--Question 6-->
+            <label for="popularity">6. How popular do you want the movie to be?</label><br />
+            <select id="popularity" name="popularity">
+                <option value="popular">Popular</option>
+                <option value="cult">Cult Classic</option>
+                <option value="hidden">Hidden Gem</option>
+            </select><br />
+
+            <!--Submit Button-->
+            <br>
+            <button onclick="window.location.href = 'home2.html';" type="button">Submit</button>
+        </form>
+
+    </div>
+
+</body>
+</html>
