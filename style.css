@@ -33,7 +33,7 @@ li a {
         color: rgb(246,245,249);
     }
 
-div {
+.box {
     position: absolute;
     top: 18%;
     right: 18%;
@@ -42,7 +42,7 @@ div {
 
     padding: 30px 0;
     text-align: center;
-    
+
     background-color: rgb(246,245,249);
     color: rgb(59,38,66);
     border: 5px double rgb(250,238,193);
@@ -52,3 +52,4 @@ div {
 form {
     padding: 5px;
 }
+
