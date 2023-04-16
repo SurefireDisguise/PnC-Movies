@@ -1,125 +1,34 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-   <head>
-      <meta charset="utf-8">
-      <title>Login/Signup Page</title>
-      <link rel="stylesheet" href="styles2.css">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   </head>
-   <body>
-      <ul>
-         <img src = "images/Pn'C Movies Logo4.jpg" alt = "Logo" width = "200" />
-         <li><a class = "active" href = "login.html">Login</a></li>
-         <li><a href="home.html">Home</a></li>
-         <li><a href="pastRecommendations.html">Past Recommendations</a></li>
-         <li><a href="aboutUs.html">About Us</a></li>
-      </ul>
-      <div class="wrapper">
-         <div class="title-text">
-            <div class="title login">
-               Login
-            </div>
-            <div class="title signup">
-               Sign Up
-            </div>
-         </div>
-         <div class="form-container">
-            <div class="slide-controls">
-               <input type="radio" name="slide" id="login" checked>
-               <input type="radio" name="slide" id="signup">
-               <label for="login" class="slide login">Login</label>
-               <label for="signup" class="slide signup">Sign Up</label>
-               <div class="slider-tab"></div>
-            </div>
-            <div class="form-inner">
-               <form action="loginConnection.php" method = "POST" class="login">
-                  <div class="field">
-                     <input type="text" placeholder="Username" required id="username_Value">
-                  </div>
-                  <div class="field">
-                     <input type="password" placeholder="Password" required id="password_Value">
-                  </div>
-                  <div class="pass-link">
-                     <a href="#">Forgot password?</a>
-                  </div>
-                  <div class="field btn">
-                     <div class="btn-layer"></div>
-                     <input type="submit" value="Login" id="submit_value">
-                  </div>
-                  <div class="signup-link">
-                     Not a member? <a href="">Signup now</a>
-                  </div>
-               </form>
-               <form action="SignUpConnection.php" method = "POST" class="signup" novalidate>
-                  <div class = "field">
-                     <input type = "text" placeholder = "Username" required name="signup_username_value" id = " signup_username_value">
-                  </div>
-                  <div class="field">
-                     <input type="text" placeholder="Email Address" required name="signup_email_value" id="signup_email_value">
-                  </div>
-                  <div class="field">
-                     <input type="password" placeholder="Password" required name="signup_password_value" id="signup_password_value">
-                  </div>
-                  <div class="field">
-                     <input type="password" placeholder="Confirm password" required name="signup_password_confirm_value" id="signup_password_confirm_value">
-                  </div>
-                  <div class="field btn">
-                     <div class="btn-layer"></div>
-                     <input type="submit" value="Signup" id="submit_value_signup">
-                  </div>
-               </form>
-            </div>
-         </div>
-      </div>
-      <script>
-         // Grabs values from the email and password input field of Login
-         const emailValue = document.getElementById("useername_Value");
-         const passwordValue = document.getElementById("password_Value");
-         
-         // Grabs values from the email and password input field of SignUp
-         const usernameValueSignUp = document.getElementById("signup_username_value")
-         const emailValueSignUp = document.getElementById("signup_email_value");
-         const passwordValueSignUp = document.getElementById("signup_password_value");
-         const passwordConfirmValueSignUp = document.getElementById("signup_password_confirm_value");
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Login</title>
+    <link href="style.css" rel="stylesheet" />
+    <!--<link href="../css/style.css" rel="stylesheet" />-->
+</head>
+<body>
+    <!--<img src="/images/Pn'C Movies Logo4.jpg" alt="Logo" width="200" />-->
+    <ul>
+        <li><img src="/images/Pn'C Movies Logo4.jpg" alt="Logo" width="200" /></li>
+        <li><a class="active" href="login.html">Login</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pastRecommendations.html">Past Recommendations</a></li>
+        <li><a href="aboutUs.html">About Us</a></li>
+    </ul>
 
-         const loginText = document.querySelector(".title-text .login");
-         const loginForm = document.querySelector("form.login");
-         const loginBtn = document.querySelector("label.login");
-         const signupBtn = document.querySelector("label.signup");
-         const signupLink = document.querySelector("form .signup-link a");
-         signupBtn.onclick = (()=>{
-           loginForm.style.marginLeft = "-50%";
-           loginText.style.marginLeft = "-50%";
-         });
-         loginBtn.onclick = (()=>{
-           loginForm.style.marginLeft = "0%";
-           loginText.style.marginLeft = "0%";
-         });
-         signupLink.onclick = (()=>{
-           signupBtn.click();
-           return false;
-         });
+    <div class="center">
+        <h2>Fixed Full-height Side Nav</h2>
+        <h3>Try to scroll this area, and see how the sidenav sticks to the page</h3>
+        <p>Notice that this div element has a left margin of 25%. This is because the side navigation is set to 25% width. If you remove the margin, the sidenav will overlay/sit on top of this div.</p>
+        <p>Also notice that we have set overflow:auto to sidenav. This will add a scrollbar when the sidenav is too long (for example if it has over 50 links inside of it).</p>
+        <p>Some text..</p>
+        <p>Some text..</p>
+        <p>Some text..</p>
+        <p>Some text..</p>
+        <p>Some text..</p>
+        <p>Some text..</p>
+        <p>Some text..</p>
+    </div>
 
-         // On Submit button click it will run this code for Login
-         document.getElementById("submit_value").addEventListener("click", () => {
-         console.log(emailValue.value);
-         console.log(passwordValue.value);
-         });
-
-         // On Submit button click it will run this code for SignUp
-         document.getElementById("submit_value_signup").addEventListener("click", () => {
-         console.log(emailValueSignUp.value);
-         console.log(passwordValueSignUp.value);
-         console.log(passwordConfirmValueSignUp.value);
-         });
-
-      </script>
-
-      
-      <?php
-          echo emailValueSignUp.value;     
-      ?>      
-
-
-   </body>
+</body>
 </html>
