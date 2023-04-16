@@ -33,24 +33,22 @@ li a {
         color: rgb(246,245,249);
     }
 
-.center {
-    top: 50%;
-    left: 50%;
-    margin: 0 200px 0 400px;
-    padding: 20px 0;
-    text-align: center;
-}
-
 div {
-    height: 400px;
+    position: absolute;
+    top: 18%;
+    right: 18%;
+    bottom: 18%;
+    left: 28%;
+
+    padding: 30px 0;
+    text-align: center;
+    
     background-color: rgb(246,245,249);
     color: rgb(59,38,66);
     border: 5px double rgb(250,238,193);
     border-radius: 50px;
-
 }
 
-form{
+form {
     padding: 5px;
 }
-
