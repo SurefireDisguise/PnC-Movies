@@ -50,7 +50,8 @@
          //RUN SECOND QUERY WITH 2ND GENRE
         //WHERE (Genres LIKE '%$genre%' AND Genres LIKE '%$genre2%')"  <- How to do query with multiple genres. 
         $third_sql = "SELECT * FROM temp_movie_table 
-                        WHERE Genres LIKE '%$genre2%'";
+                        WHERE Genres LIKE '%$genre2%'
+                        ORDER BY avgRating DESC";
         
 
         $result2 = mysqli_query( $connection, $third_sql );
