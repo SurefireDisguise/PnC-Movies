@@ -1,3 +1,8 @@
+/*File: style.css
+Project: PnC
+Author: PnC Development Team
+History: Version 3.0 April 22, 2022*/
+
 body {
     background-color: rgba(198,194,219,1);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
@@ -35,9 +40,9 @@ li a {
 
 .box {
     position: absolute;
-    top: 18%;
-    right: 18%;
-    bottom: 18%;
+    top: 10%;
+    right: 15%;
+    bottom: 10%;
     left: 28%;
 
     padding: 30px 0;

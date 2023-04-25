@@ -1,9 +1,13 @@
+
 <?php
+/*File: searchT.php
+Project: PnC
+Author: PnC Development Team
+History: Version 3.0 April 22, 2022*/
         $user="root";
         $password="";
         $database="pnc";
-        $table="principals_table";
-
+       
         
         mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
         $connection = mysqli_connect('localhost',$user,$password,$database);
@@ -12,27 +16,15 @@
         }
 
        
-        //Values are assigned correctly. 
-        //movies = $_POST['movieArr'];
-        // Get the ID array from the POST data and convert it into a comma-separated string
-        //$movie_string = implode(',',$movies);
+        //Get values from HTTP request
         $ac1= $_POST['ac1'];
         $ac2= $_POST['ac2'];
         $ac3= $_POST['ac3'];
         $ac4= $_POST['ac4'];
-        //var_dump($movie_string);
+        
         $category = $_POST['category'];
-
-        //var_dump($_POST);
-
-        //PROBLEM HERE
-
-        // Build the query using the IN operator
-        /*
-        $query_sql= "SELECT * FROM principals_table 
-                    WHERE ID IN ($movie_string) 
-                    AND Category LIKE '$category'";
-                    */
+        
+        //First Query to extract names from movie1.  
          $first_sql= "SELECT * FROM principals_table 
                     WHERE ID LIKE '$ac1'
                     AND Category LIKE '$category'";
@@ -51,13 +43,8 @@
                            VALUES ('$id', '$n_id', '$category', '$primary_name', 'Name1')";
             mysqli_query($connection, $insert_sql);
         }
-        /*
-        $stack = array();
-        while( $row = mysqli_fetch_assoc( $result) ) {
-            array_push( $stack, $row );
-        }
-        */
-        
+       
+        //Second query to extract names from movie2. 
         $second_sql= "SELECT * FROM principals_table 
         WHERE ID LIKE '$ac2'
         AND Category LIKE '$category'";
@@ -77,13 +64,9 @@
                            VALUES ('$id', '$n_id', '$category', '$primary_name', 'Name2')";
             mysqli_query($connection, $insert_sql);
         }
-        /*
-        $stack2 = array();
-        while( $row2 = mysqli_fetch_assoc( $result2) ) {
-        array_push( $stack2, $row2 );
-        }
-        */
+        
 
+        //Third query to extract names from movie3
         $third_sql= "SELECT * FROM principals_table 
         WHERE ID LIKE '$ac3'
         AND Category LIKE '$category'";
@@ -103,13 +86,8 @@
                            VALUES ('$id', '$n_id', '$category', '$primary_name', 'Name3')";
             mysqli_query($connection, $insert_sql);
         }
-        /*
-        $stack3 = array();
-        while( $row3 = mysqli_fetch_assoc( $result3) ) {
-        array_push( $stack3, $row3 );
-        }
-        */
-
+        
+        //Fourth query to extract names from movie4
         $fourth_sql= "SELECT * FROM principals_table 
         WHERE ID LIKE '$ac4'
         AND Category LIKE '$category'";
@@ -129,28 +107,10 @@
                            VALUES ('$id', '$n_id', '$category', '$primary_name', 'Name4')";
             mysqli_query($connection, $insert_sql);
         }
-        /*
-        $stack4 = array();
-        while( $row4 = mysqli_fetch_assoc( $result4) ) {
-        array_push( $stack4, $row4 );
-        }
-        */
-
-        //SAVE ACTOR INFO INTO NEW TABLE, SO WE CAN ACCESS ON THE CONNECTION.6 PHP.
-        //NEW TABLE like principals table but extra column for name number. 
-        //That way we know what movie it belongs to and we can divide later.
-
-        /*
-        $data = array(
-            "Name1" => $stack,
-            "Name2" => $stack2,
-            "Name3" => $stack3,
-            "Name4" => $stack4
-        );
-        */
+       
+        //We return a message after all queries run and names are in the names_table. 
+        //This so it can be extracted from the next webpage. 
         $data= "Data was passed into Table.";
-
-
 
         echo json_encode( $data );
     ?>   

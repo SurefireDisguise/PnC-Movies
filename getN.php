@@ -1,4 +1,10 @@
+
 <?php
+/*File: getN.php
+Project: PnC
+Author: PnC Development Team
+History: Version 3.0 April 22, 2022*/
+
         $user="root";
         $password="";
         $database="pnc";
@@ -12,32 +18,24 @@
 
         $category= $_POST['category'];
 
+
+
+        //First query, to extract names from Movie1 
         $first_sql = "SELECT * FROM names_table 
                 WHERE nameNumber LIKE 'Name1'
                 AND Category LIKE '$category'";
 
 
-       
-    //Pass the results into an array
+        //Pass the results into an array
         $result = mysqli_query( $connection,$first_sql);
-        //Array1
+        
         $stack = array();
         while( $row = mysqli_fetch_assoc( $result) ) {
             array_push( $stack, $row );
         }
-        /*
-        if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-              array_push($stack, $row);
-            }
-          } else {
-            $stack[] = array("message" => "No results for Name1 and $category.");
-          }
-          */
-    // Pass the results into an array
-
-
         
+
+        //Second query, to extract names from Movie2 
         $second_sql= "SELECT * FROM names_table 
         WHERE nameNumber LIKE 'Name2'
         AND Category LIKE '$category'";
@@ -49,39 +47,21 @@
         while( $row2 = mysqli_fetch_assoc( $result2) ) {
             array_push( $stack2, $row2 );
         }
-        /*
-        if (mysqli_num_rows($result2) > 0) {
-            while ($row2 = mysqli_fetch_assoc($result2)) {
-              array_push($stack2, $row2);
-            }
-          } else {
-            $stack2[] = array("message" => "No results for Name2 and $category.");
-          }
-          */
         
-
+        //Third query, to extract names from Movie3
         $third_sql= "SELECT * FROM names_table 
         WHERE nameNumber LIKE 'Name3'
         AND Category LIKE '$category'";
 
         //Pass the results into an array
         $result3 = mysqli_query( $connection,$third_sql);
-        //Array1
-       
+        
         $stack3 = array();
         while( $row3 = mysqli_fetch_assoc( $result3) ) {
             array_push( $stack3, $row3 );
         }
-        /*
-        if (mysqli_num_rows($result3) > 0) {
-            while ($row3 = mysqli_fetch_assoc($result3)) {
-              array_push($stack3, $row3);
-            }
-          } else {
-            $stack3[] = array("message" => "No results for Name3 and $category.");
-          }
-          */
-
+       
+        //Fourth query, to extract names from Movie4
         $fourth_sql= "SELECT * FROM names_table 
         WHERE nameNumber LIKE 'Name4'
         AND Category LIKE '$category'";
@@ -94,21 +74,8 @@
         while( $row4 = mysqli_fetch_assoc( $result4) ) {
             array_push( $stack4, $row4);
         }
-        /*
-        if (mysqli_num_rows($result4) > 0) {
-            while ($row4 = mysqli_fetch_assoc($result4)) {
-              array_push($stack4, $row4);
-            }
-          } else {
-            $stack4[] = array("message" => "No results for Name4 and $category.");
-          }
-          */
         
-        //SAVE ACTOR INFO INTO NEW TABLE, SO WE CAN ACCESS ON THE CONNECTION.6 PHP.
-        //NEW TABLE like principals table but extra column for name number. 
-        //That way we know what movie it belongs to and we can divide later.
-       
-       
+        //Results saved into array and passed back to the page. 
 
         $data = array(
             "Name1" => $stack,

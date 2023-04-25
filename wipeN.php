@@ -1,5 +1,10 @@
 
 <?php
+
+/*File: wipeN.php
+Project: PnC
+Author: PnC Development Team
+History: Version 3.0 April 22, 2022*/
         $user="root";
         $password="";
         $database="pnc";
@@ -12,12 +17,12 @@
         }
 
 
-        //WIPE TABLE
+        //WIPE names_table so its empty. 
         $first_sql="DELETE FROM names_table";
         mysqli_query( $connection,$first_sql);
        
        
-
+        //Return message. 
         $data = "getN wiped";
         
 

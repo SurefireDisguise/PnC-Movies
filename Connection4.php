@@ -55,15 +55,6 @@
     var q2=[];
     var q3=[]; 
 
-    var actorArr=[];
-    var actressArr=[];
-    var directorArr=[]; 
-
-    var actorN=[];
-    var actressN=[];
-    var directorN=[];
-
-
 
     function start(){
 
@@ -139,10 +130,25 @@
   formData.append('voteCeiling', voteCeiling);
   formData.append('voteFloor', voteFloor);
 
-  console.log(formData);
 
   // SEND THE HTTP request TO A SEPARATE PHP FILE
-  
+  //If family movie then different file where it querys for family movies. 
+  /*
+  if (fam=="Yes"){
+    const response = await fetch('searchF.php', {
+    method: 'POST',
+    body: formData
+  });
+  results = await response.json();
+}
+else if (fam=="No"){
+  const response = await fetch('search.php', {
+    method: 'POST',
+    body: formData
+  });
+  results = await response.json();
+}*/
+
 try {
   let response;
   if (fam == "Yes") {
@@ -169,9 +175,9 @@ try {
 
 } catch (error) {
   // Handle the error in a way that is appropriate for your application
-  //console.error('Error:', error.message);
+  console.error('Error:', error.message);
   document.getElementById("resultP").innerHTML ="We could not find a movie, please try again with different answers.";
-  throw new Error("An error has occurred. Please reload the page.");
+  
 }
   
   console.log("Result Array:"); 
@@ -194,119 +200,20 @@ try {
   console.log(q2.length);
   //console.log(q3);
   
-  
-  //Easier to handle if we always have 12  movies, less variability 
-  if (q2.length<12){
-    var counter=0;
-    while (q2.length<12 && counter < q3.length){
+  //Handle length of arrays. 
+  if (q2.length<6){
+    var counter=1;
+    while (q2.length<6){
         q2.push(q3[counter]);
         counter++;
         console.log(q2);
     }
   }
-  else if (q2.length>12){
-    q2.splice(12, q2.length-12);
-  }
   
-   
+  
   console.log("Q2 Final:");
   console.log(q2);
   
-  
-  //Divide Q2 into the actor, actress and director arrays. 
-
-// Calculate the length of each subarray
-    var subLen = Math.floor(q2.length / 3);
-
-//Could randomize array before dividing. 
-
-// Create the subarrays
-actorArr = q2.slice(0, subLen);
-actressArr = q2.slice(subLen, subLen * 2);
-directorArr = q2.slice(subLen * 2);
-
-console.log(actorArr);
-console.log(actorArr.length); 
-console.log(actressArr); 
-console.log(directorArr); 
-
-
-var category2="actor";
-var category3="actress";
-var category4="director";
-
-var formData2 = new FormData();
-
-formData2.append('category',category2);
-//Append the ids from the movies inside actor array
-formData2.append('ac1',actorArr[0]["ID"]);
-formData2.append('ac2', actorArr[1]["ID"]);
-formData2.append('ac3',actorArr[2]["ID"]);
-formData2.append('ac4', actorArr[3]["ID"]);
-console.log(formData2);
-
-const response2 = await fetch('searchT.php', {
-      method: 'POST',
-      body: formData2
-    });
-
-    actorN= await response2.json();
-    console.log(actorN); 
-
-
-var formData3 = new FormData();
-formData3.append('category',category3);
-//Append the ids from the movies inside actor array
-formData3.append('ac1',actressArr[0]["ID"]);
-formData3.append('ac2', actressArr[1]["ID"]);
-formData3.append('ac3',actressArr[2]["ID"]);
-formData3.append('ac4', actressArr[3]["ID"]);
-console.log(formData2);
-
-const response3 = await fetch('searchT.php', {
-      method: 'POST',
-      body: formData3
-    });
-
-    actressN= await response3.json();
-    console.log(actressN); 
-
-var formData4 = new FormData();
-formData4.append('category',category4);
-//Append the ids from the movies inside actor array
-formData4.append('ac1',directorArr[0]["ID"]);
-formData4.append('ac2', directorArr[1]["ID"]);
-formData4.append('ac3',directorArr[2]["ID"]);
-formData4.append('ac4', directorArr[3]["ID"]);
-console.log(formData2);
-
-const response4 = await fetch('searchT.php', {
-      method: 'POST',
-      body: formData4
-    });
-
-    directorN= await response4.json();
-    console.log(directorN); 
-  
-  /*
-  //GET ONLY NAMES INTO 3 ARRAYS
-  var act1=actorN.Name1; 
-  var act2=actorN.Name2;
-  var act3=actorN.Name3;
-  var act4=actorN.Name4;
-  
-  
-    var actNames=[];
-    actNames[0]=act1[0]["primaryName"];
-    actNames[1]=act2[0]["primaryName"];
-    actNames[2]=act3[0]["primaryName"];
-    actNames[3]=act4[0]["primaryName"];
-
-    console.log(actNames);
-    */
-    //HAVE TO PASS TO A DIFFERENT PAGE
-
-
   //Call Post results.
   postResult();
   
@@ -327,22 +234,7 @@ const response4 = await fetch('searchT.php', {
     document.getElementById("resultP3").innerHTML ="Release Year= "+result3;
     document.getElementById("resultP4").innerHTML ="Number of Votes= "+result4;
     }
-
-    function getRandomNumber(length) {
-
-    return Math.floor(Math.random() * length);
-
-    }
-
-    ///Function to generate random number for past recommendation table. 
-    function generateRandomHex() {
-  const digits = '0123456789abcdef';
-  let hex = '';
-  for (let i = 0; i < 10; i++) {
-    hex += digits[Math.floor(Math.random() * 16)];
-  }
-  return hex;
-}
+    
     window.addEventListener("load",start,false);
     </script>
 </html>

@@ -1,4 +1,10 @@
+
 <?php
+/*File: search.php
+Project: PnC
+Author: PnC Development Team
+History: Version 3.0 April 22, 2022*/
+
         $user="root";
         $password="";
         $database="pnc";
